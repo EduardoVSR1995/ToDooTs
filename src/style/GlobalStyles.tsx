@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -29,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
     body {
+        background-color: #ffffff ;
         line-height: 1;
     }
     
@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
     
     *{
         font-weight: 200 ;
-        font-family: "Lexend Deca" ;
+        font-family: "Rubik Spray Paint";
         box-sizing: border-box;
     }
     
@@ -61,11 +61,74 @@ const GlobalStyle = createGlobalStyle`
         font-weight: bold;
     }
 
-    .app{
-        padding: 10px ;
-        height: 100vh ;
-        background: red ;
+    .head{
+        font-size: 20px ;
+        display: flex ;
+        justify-content: center ;
+        flex-wrap: wrap ;
+        padding: 20px ;
+        height: 100px ;
     }
+
+    span{
+        font-size: 20px ;
+        width: 100% ;
+        text-align: center ;
+    }
+    
+    input{
+        border-radius:10px 0px 0px 10px;
+        font-size: 20px ;
+        width: 80%;
+        padding: 10px;
+        height: 100% ;
+
+        :focus, select:focus { 
+            border: 1 none;
+            outline: 0;
+        }
+        
+    }
+    
+    form{
+        width: 100% ;
+        display:flex ;
+        align-items:center ;
+    }
+
+    .assignment{
+        display: flex ;
+        justify-content: space-between ;
+        margin:10px 0px 10px 0px ;
+        padding: 5px ;
+        margin-left: 2.5% ;
+        width: 95% ;
+        border-radius:10px;
+        border:royalblue 1px solid;
+        background-color: #ffffff;
+        animation: fadeIn 1s;
+        @keyframes fadeIn {
+            0% {
+                transform: translate(100%);
+                }
+            100% {
+                transform: translate(0);
+                }
+        }
+
+    }
+    button{
+        border-radius:0px 10px 10px 0px;
+        font-size: 20px ;
+        width: 20%;
+        height: 100%;
+        transition: 0.2s all;
+        :active{
+            transform:scale(0.50);
+            
+        }
+    }
+    
 `;
 
 export default GlobalStyle;
