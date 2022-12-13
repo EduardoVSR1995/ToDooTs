@@ -4,7 +4,6 @@ import App from './App';
 
 function getText(value: string){
   return screen.getByText(value);
-
 }
 
 describe("Layout tests",()=>{
@@ -41,9 +40,7 @@ describe("Layout tests",()=>{
     userEvent.type(input, name);
 
     userEvent.click(getText("Colocar na lista"));
-
-    userEvent.clear(input);
-
+    
     const element = getText(name);
 
     expect(element).toBeInTheDocument();
@@ -57,12 +54,7 @@ describe("Layout tests",()=>{
 
     userEvent.click(getText("Colocar na lista"));
 
-    userEvent.clear(input);
-
-    const element = getText("apagar");
-
-    console.log(element)
-    expect(!element).toBeInTheDocument();
+    expect(screen.queryByText(/apagar/i)).not.toBeInTheDocument();
   });  
 
 })
